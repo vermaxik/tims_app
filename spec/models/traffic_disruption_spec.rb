@@ -10,7 +10,7 @@ RSpec.describe TrafficDisruption, type: :model do
   it { should validate_presence_of(:category) }
   it { should validate_presence_of(:subcategory) }
   it { should validate_presence_of(:event_start_at) }
-  it { should validate_presence_of(:location,) }
+  it { should validate_presence_of(:location) }
   it { should validate_presence_of(:longitude) }
   it { should validate_presence_of(:latitude) }
 
