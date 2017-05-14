@@ -27,5 +27,7 @@ module TimsMapApp
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    config.tims_feed_url = 'https://data.tfl.gov.uk/tfl/syndication/feeds/tims_feed.xml?app_id=&app_key='
   end
 end

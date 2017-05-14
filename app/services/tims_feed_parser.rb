@@ -1,7 +1,7 @@
 class TimsFeedParser
 
   # Denife XML selectors with examples
-  XML_FEED_URL    = "#{Rails.root}/db/xml/tims_feed.xml"
+  XML_FEED_URL    = Rails.configuration.tims_feed_url # TODO: create yml config
   XML_SELECTOR    = 'Disruption'       # Disruption XML array
   XML_ID          = 'id'               # 158965
   XML_STATUS      = 'status'           # Active
@@ -60,7 +60,12 @@ class TimsFeedParser
   private
     # Download XML for parsing
     def get_xml
-      Nokogiri::XML(File.read(XML_FEED_URL));
+      begin
+        response = HTTParty.get(XML_FEED_URL)
+        Nokogiri::XML(response.body);
+      rescue
+        Rails.logger.fatal "TimsFeedParser#get_xml: Open file failed"
+      end
     end
 
     # Split coordinates from string to float array
