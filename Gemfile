@@ -13,6 +13,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'haml-rails', '~> 0.9'
 gem 'webpacker'
 gem 'jbuilder', '~> 2.5'
+gem 'active_model_serializers', '~> 0.10.0'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
