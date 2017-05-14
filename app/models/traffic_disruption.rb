@@ -10,4 +10,6 @@ class TrafficDisruption < ApplicationRecord
             :category, :subcategory, :event_start_at, :location,
             :longitude, :latitude, presence: true
   validates :disruption_id, uniqueness: true
+
+  scope :active, -> { where(event_end_at: nil) }
 end
