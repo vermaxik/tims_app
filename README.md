@@ -1,24 +1,25 @@
-# README
+# Live Traffic Disruptions - TIMS
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Run project:
+Install gems:
+`bundle install`
 
-Things you may want to cover:
+Run migrations:
+`rake db:migrate`
 
-* Ruby version
+Start server:
+`rails s`
 
-* System dependencies
+Get API :
+`http://localhost:3000/api/v1/disruptions.json`
 
-* Configuration
+### Run scheduler
+On prod use to update cron:
+`whenever --update-crontab`
 
-* Database creation
 
-* Database initialization
+### Tests
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Run:
+`rspec`
+for run tests
